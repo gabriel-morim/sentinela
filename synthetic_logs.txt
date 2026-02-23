@@ -1,0 +1,500 @@
+2026-02-20T14:58:13Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=32319 DPORT=53 PROTO=UDP
+2026-02-20T14:44:00Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.20 SPORT=18189 DPORT=445 PROTO=TCP
+2026-02-20T14:31:34Z web-server-01 systemd: Started Daily apt download activities.
+2026-02-20T14:49:10Z fileserver-01 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:40:45Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.100 SPORT=5790 DPORT=443 PROTO=TCP
+2026-02-20T14:53:13Z web-server-01 sshd[4821]: Failed password for ubuntu from 45.33.32.156 port 16563 ssh2
+2026-02-20T14:30:07Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.21 SPORT=48758 DPORT=8443 PROTO=TCP
+2026-02-20T14:48:38Z db-server-02 sshd[4665]: Accepted password for dave from 192.168.1.20 port 57013 ssh2
+2026-02-20T14:56:38Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.21 SPORT=29614 DPORT=22 PROTO=TCP
+2026-02-20T14:57:32Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.1 SPORT=1352 DPORT=53 PROTO=UDP
+2026-02-20T14:41:53Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.30 SPORT=42131 DPORT=3306 PROTO=TCP
+2026-02-20T15:09:26Z web-server-02 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:34:14Z db-server-02 sshd[8819]: Accepted password for bob from 192.168.1.30 port 7883 ssh2
+2026-02-20T14:31:29Z workstation-carol sshd[1646]: Accepted password for alice from 192.168.1.101 port 25301 ssh2
+2026-02-20T14:42:48Z web-server-01 anacron: Job 'cron.daily' started
+2026-02-20T14:41:28Z workstation-alice sshd[5529]: Accepted password for svc_monitor from 192.168.1.20 port 22913 ssh2
+2026-02-20T15:12:09Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.20 SPORT=11697 DPORT=22 PROTO=TCP
+2026-02-20T14:19:23Z workstation-dave sshd[3431]: Failed password for bob from 151.101.1.140 port 30205 ssh2
+2026-02-20T14:33:29Z web-server-01 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T15:15:20Z fileserver-01 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:43:52Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.100 SPORT=46157 DPORT=5432 PROTO=TCP
+2026-02-20T14:28:09Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.30 SPORT=14874 DPORT=25 PROTO=TCP
+2026-02-20T14:29:34Z workstation-dave postfix/pickup: startup
+2026-02-20T14:25:35Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.101 SPORT=61175 DPORT=5432 PROTO=TCP
+2026-02-20T15:16:31Z gateway-fw-01 kernel: ALLOW IN=eth1 OUT=eth0 SRC=192.168.1.20 DST=185.220.101.1 SPORT=50003 DPORT=443 PROTO=TCP BYTES=996410
+2026-02-20T15:06:59Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.10 SPORT=28079 DPORT=143 PROTO=TCP
+2026-02-20T14:53:05Z workstation-alice anacron: Job 'cron.daily' started
+2026-02-20T14:23:29Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.103 SPORT=60186 DPORT=22 PROTO=TCP
+2026-02-20T15:08:48Z workstation-alice kernel: eth0: renamed from veth3a2b1c
+2026-02-20T15:05:29Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=103.75.190.1 DST=192.168.1.10 SPORT=40233 DPORT=22 PROTO=TCP
+2026-02-20T15:10:17Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.101 SPORT=29358 DPORT=25 PROTO=TCP
+2026-02-20T14:34:38Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.102 SPORT=1802 DPORT=22 PROTO=TCP
+2026-02-20T15:06:32Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.21 SPORT=60029 DPORT=80 PROTO=TCP
+2026-02-20T14:43:44Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.11 SPORT=28559 DPORT=143 PROTO=TCP
+2026-02-20T14:40:43Z workstation-bob sshd[2038]: Failed password for guest from 1.1.1.1 port 53700 ssh2
+2026-02-20T15:07:43Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.102 SPORT=48031 DPORT=80 PROTO=TCP
+2026-02-20T14:24:21Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.30 SPORT=41366 DPORT=25 PROTO=TCP
+2026-02-20T14:49:54Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.21 SPORT=1590 DPORT=3389 PROTO=TCP
+2026-02-20T14:45:01Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.1 SPORT=3656 DPORT=8080 PROTO=TCP
+2026-02-20T14:19:30Z workstation-dave sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:53:43Z web-server-01 sshd[4821]: Failed password for admin from 45.33.32.156 port 17848 ssh2
+2026-02-20T15:00:37Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.101 SPORT=5349 DPORT=3306 PROTO=TCP
+2026-02-20T15:14:47Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.1 SPORT=43660 DPORT=22 PROTO=TCP
+2026-02-20T14:41:26Z workstation-dave sshd[7507]: Failed password for admin from 8.8.4.4 port 24731 ssh2
+2026-02-20T14:24:46Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.21 SPORT=10093 DPORT=5432 PROTO=TCP
+2026-02-20T15:12:01Z gateway-fw-01 kernel: DENY IN=eth1 OUT=eth1 SRC=192.168.1.11 DST=192.168.1.20 SPORT=54000 DPORT=22 PROTO=TCP
+2026-02-20T14:52:16Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.100 SPORT=22438 DPORT=5432 PROTO=TCP
+2026-02-20T14:42:49Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.21 SPORT=64556 DPORT=143 PROTO=TCP
+2026-02-20T15:07:03Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.101 SPORT=25725 DPORT=445 PROTO=TCP
+2026-02-20T14:21:07Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.11 SPORT=3666 DPORT=22 PROTO=TCP
+2026-02-20T14:35:32Z gateway-fw-01 sshd[1600]: Failed password for bob from 8.8.4.4 port 20792 ssh2
+2026-02-20T14:53:26Z web-server-01 cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:41:40Z db-server-01 sshd[5585]: Failed password for dave from 1.1.1.1 port 45327 ssh2
+2026-02-20T15:00:07Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.102 SPORT=29102 DPORT=445 PROTO=TCP
+2026-02-20T15:12:07Z db-server-02 systemd: Started Daily apt download activities.
+2026-02-20T15:01:22Z db-server-01 sshd[2362]: Accepted password for admin from 192.168.1.21 port 26472 ssh2
+2026-02-20T15:18:40Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.1 SPORT=65370 DPORT=3306 PROTO=TCP
+2026-02-20T14:28:34Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.10 SPORT=46029 DPORT=3389 PROTO=TCP
+2026-02-20T14:26:29Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.10 SPORT=56387 DPORT=5432 PROTO=TCP
+2026-02-20T14:52:36Z workstation-alice sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:35:28Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.10 SPORT=13041 DPORT=22 PROTO=TCP
+2026-02-20T15:15:50Z db-server-02 sshd[9769]: Failed password for dave from 8.8.4.4 port 2711 ssh2
+2026-02-20T14:41:28Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.102 SPORT=10730 DPORT=80 PROTO=TCP
+2026-02-20T15:10:27Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.100 SPORT=65272 DPORT=143 PROTO=TCP
+2026-02-20T15:11:48Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.10 SPORT=7925 DPORT=80 PROTO=TCP
+2026-02-20T14:19:50Z workstation-alice anacron: Job 'cron.daily' started
+2026-02-20T14:27:46Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.1 SPORT=47938 DPORT=5432 PROTO=TCP
+2026-02-20T14:53:18Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.101 SPORT=6042 DPORT=80 PROTO=TCP
+2026-02-20T15:18:57Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.11 SPORT=12699 DPORT=143 PROTO=TCP
+2026-02-20T14:46:55Z web-server-01 sshd[7909]: Failed password for dave from 8.8.8.8 port 30748 ssh2
+2026-02-20T15:13:33Z workstation-alice ntpd: Soliciting pool server 162.159.200.1
+2026-02-20T14:29:37Z workstation-dave sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:53:02Z web-server-01 sshd[6960]: Accepted password for carol from 192.168.1.1 port 64466 ssh2
+2026-02-20T14:34:01Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.20 SPORT=51375 DPORT=53 PROTO=UDP
+2026-02-20T14:53:58Z web-server-01 sshd[4821]: Failed password for root from 45.33.32.156 port 56130 ssh2
+2026-02-20T14:41:34Z db-server-02 sshd[9859]: Accepted password for dave from 192.168.1.30 port 58888 ssh2
+2026-02-20T15:07:06Z workstation-dave sshd[1340]: Accepted password for dave from 192.168.1.1 port 33286 ssh2
+2026-02-20T14:48:15Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=185.220.101.1 DST=192.168.1.21 SPORT=36059 DPORT=8080 PROTO=TCP
+2026-02-20T14:56:44Z web-server-02 sshd[5697]: Accepted password for admin from 192.168.1.101 port 11775 ssh2
+2026-02-20T14:24:19Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.10 SPORT=7371 DPORT=25 PROTO=TCP
+2026-02-20T14:51:36Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=60882 DPORT=3389 PROTO=TCP
+2026-02-20T14:30:26Z db-server-02 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:39:24Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=57682 DPORT=80 PROTO=TCP
+2026-02-20T14:38:19Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.101 SPORT=12086 DPORT=143 PROTO=TCP
+2026-02-20T14:38:42Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=32395 DPORT=80 PROTO=TCP
+2026-02-20T14:35:17Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.21 SPORT=40643 DPORT=8443 PROTO=TCP
+2026-02-20T15:16:02Z gateway-fw-01 kernel: eth0: renamed from veth3a2b1c
+2026-02-20T15:14:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.21 SPORT=47614 DPORT=3389 PROTO=TCP
+2026-02-20T14:40:31Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.102 SPORT=58245 DPORT=22 PROTO=TCP
+2026-02-20T14:31:46Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.102 SPORT=50472 DPORT=8443 PROTO=TCP
+2026-02-20T14:58:25Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.101 SPORT=33736 DPORT=5432 PROTO=TCP
+2026-02-20T14:56:37Z workstation-dave anacron: Job 'cron.daily' started
+2026-02-20T14:50:42Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.103 SPORT=60291 DPORT=143 PROTO=TCP
+2026-02-20T15:04:55Z gateway-fw-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T15:05:51Z db-server-02 ntpd: Soliciting pool server 162.159.200.1
+2026-02-20T14:27:39Z fileserver-01 postfix/pickup: startup
+2026-02-20T14:55:39Z web-server-02 sshd[3389]: Accepted password for carol from 192.168.1.103 port 45693 ssh2
+2026-02-20T15:14:07Z web-server-01 sshd[9449]: Failed password for administrator from 8.8.8.8 port 62266 ssh2
+2026-02-20T15:05:51Z workstation-bob sshd[1767]: Failed password for svc_monitor from 185.220.101.1 port 12333 ssh2
+2026-02-20T14:53:16Z web-server-01 sshd[4821]: Failed password for ubuntu from 45.33.32.156 port 33301 ssh2
+2026-02-20T14:28:51Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.102 SPORT=19894 DPORT=5432 PROTO=TCP
+2026-02-20T14:58:30Z workstation-dave systemd: Started Daily apt download activities.
+2026-02-20T15:08:00Z db-server-02 sshd[6846]: Accepted password for dave from 192.168.1.1 port 16280 ssh2
+2026-02-20T14:22:58Z fileserver-01 anacron: Job 'cron.daily' started
+2026-02-20T14:58:57Z db-server-02 sshd[1075]: Accepted password for alice from 192.168.1.11 port 57672 ssh2
+2026-02-20T15:09:56Z web-server-01 sshd[9197]: Accepted password for svc_backup from 192.168.1.21 port 32955 ssh2
+2026-02-20T15:06:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=9309 DPORT=443 PROTO=TCP
+2026-02-20T14:41:52Z workstation-carol sshd[3071]: Failed password for svc_backup from 151.101.1.140 port 62230 ssh2
+2026-02-20T14:42:41Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=15190 DPORT=110 PROTO=TCP
+2026-02-20T15:09:49Z gateway-fw-01 sshd[9225]: Failed password for guest from 8.8.8.8 port 37065 ssh2
+2026-02-20T14:54:31Z web-server-01 sshd[4821]: Accepted password for root from 45.33.32.156 port 25194 ssh2
+2026-02-20T14:57:15Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.10 SPORT=14101 DPORT=80 PROTO=TCP
+2026-02-20T15:04:50Z db-server-01 sshd[6316]: Failed password for bob from 104.21.50.100 port 39855 ssh2
+2026-02-20T14:43:02Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.1 SPORT=61792 DPORT=53 PROTO=UDP
+2026-02-20T15:11:36Z workstation-bob sshd[8473]: Failed password for administrator from 54.230.10.1 port 61133 ssh2
+2026-02-20T15:12:51Z web-server-01 kernel: eth0: renamed from veth3a2b1c
+2026-02-20T15:05:08Z db-server-01 kernel: eth0: renamed from veth3a2b1c
+2026-02-20T14:51:11Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.100 SPORT=37509 DPORT=443 PROTO=TCP
+2026-02-20T14:53:14Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.1 SPORT=2508 DPORT=5432 PROTO=TCP
+2026-02-20T15:12:03Z gateway-fw-01 kernel: DENY IN=eth1 OUT=eth1 SRC=192.168.1.11 DST=192.168.1.10 SPORT=54000 DPORT=3306 PROTO=TCP
+2026-02-20T14:37:14Z db-server-01 cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:49:13Z workstation-carol sshd[8159]: Accepted password for dave from 192.168.1.20 port 13390 ssh2
+2026-02-20T15:02:00Z workstation-bob sshd[1894]: Failed password for dave from 54.230.10.1 port 47680 ssh2
+2026-02-20T15:14:11Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=16811 DPORT=445 PROTO=TCP
+2026-02-20T15:18:03Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.102 SPORT=50915 DPORT=5432 PROTO=TCP
+2026-02-20T14:21:56Z db-server-02 sshd[1477]: Failed password for dave from 151.101.1.140 port 3420 ssh2
+2026-02-20T15:04:34Z gateway-fw-01 sshd[8335]: Failed password for root from 104.21.50.100 port 8155 ssh2
+2026-02-20T14:36:18Z workstation-dave postfix/pickup: startup
+2026-02-20T14:51:51Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.103 SPORT=17410 DPORT=5432 PROTO=TCP
+2026-02-20T14:31:23Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.30 SPORT=13230 DPORT=443 PROTO=TCP
+2026-02-20T14:19:52Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.21 SPORT=43893 DPORT=3306 PROTO=TCP
+2026-02-20T14:39:46Z workstation-carol sshd[1540]: Failed password for svc_backup from 1.0.0.1 port 34653 ssh2
+2026-02-20T15:17:29Z workstation-dave sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:47:52Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.102 SPORT=34072 DPORT=110 PROTO=TCP
+2026-02-20T14:57:11Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.30 SPORT=25554 DPORT=5432 PROTO=TCP
+2026-02-20T14:52:00Z db-server-02 sshd[9469]: Accepted password for bob from 192.168.1.102 port 42231 ssh2
+2026-02-20T14:53:25Z web-server-01 sshd[4821]: Failed password for admin from 45.33.32.156 port 13704 ssh2
+2026-02-20T15:14:01Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.101 SPORT=17969 DPORT=443 PROTO=TCP
+2026-02-20T15:16:19Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.21 SPORT=16079 DPORT=3389 PROTO=TCP
+2026-02-20T14:59:06Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.1 SPORT=64570 DPORT=22 PROTO=TCP
+2026-02-20T14:28:59Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.102 SPORT=40969 DPORT=8443 PROTO=TCP
+2026-02-20T15:05:10Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.30 SPORT=41080 DPORT=80 PROTO=TCP
+2026-02-20T14:31:41Z workstation-bob kernel: eth0: renamed from veth3a2b1c
+2026-02-20T14:22:10Z db-server-02 sshd[3209]: Failed password for alice from 1.0.0.1 port 22761 ssh2
+2026-02-20T14:39:22Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.101 SPORT=14595 DPORT=53 PROTO=UDP
+2026-02-20T14:20:39Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.20 SPORT=20938 DPORT=110 PROTO=TCP
+2026-02-20T14:25:46Z workstation-alice systemd: Started Daily apt download activities.
+2026-02-20T14:22:40Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.101 SPORT=11403 DPORT=110 PROTO=TCP
+2026-02-20T14:32:42Z workstation-dave sshd[4710]: Failed password for svc_backup from 8.8.4.4 port 5736 ssh2
+2026-02-20T14:29:43Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.30 SPORT=34120 DPORT=110 PROTO=TCP
+2026-02-20T15:07:36Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=8622 DPORT=143 PROTO=TCP
+2026-02-20T14:52:43Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=12116 DPORT=5432 PROTO=TCP
+2026-02-20T15:14:40Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.102 SPORT=35373 DPORT=445 PROTO=TCP
+2026-02-20T15:11:15Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.1 SPORT=25653 DPORT=5432 PROTO=TCP
+2026-02-20T15:09:36Z fileserver-01 cron: pam_unix(cron:session): session opened for user root
+2026-02-20T15:05:19Z workstation-dave cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:59:03Z workstation-alice sshd[5713]: Accepted password for svc_backup from 192.168.1.30 port 17135 ssh2
+2026-02-20T14:53:55Z web-server-01 sshd[4821]: Failed password for deploy from 45.33.32.156 port 63069 ssh2
+2026-02-20T14:20:24Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.10 SPORT=38140 DPORT=3306 PROTO=TCP
+2026-02-20T15:15:36Z web-server-02 kernel: eth0: renamed from veth3a2b1c
+2026-02-20T15:01:39Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.103 SPORT=11603 DPORT=5432 PROTO=TCP
+2026-02-20T14:31:41Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.21 SPORT=5412 DPORT=80 PROTO=TCP
+2026-02-20T14:36:28Z fileserver-01 sshd[4327]: Failed password for alice from 194.165.16.11 port 3664 ssh2
+2026-02-20T14:19:46Z fileserver-01 sshd[1015]: Failed password for bob from 8.8.8.8 port 27121 ssh2
+2026-02-20T14:45:08Z workstation-carol postfix/pickup: startup
+2026-02-20T14:52:09Z workstation-alice sshd[2960]: Failed password for svc_monitor from 8.8.4.4 port 34478 ssh2
+2026-02-20T14:45:11Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.20 SPORT=18104 DPORT=445 PROTO=TCP
+2026-02-20T14:54:19Z fileserver-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T15:01:04Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=17474 DPORT=80 PROTO=TCP
+2026-02-20T14:32:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.1 SPORT=42942 DPORT=143 PROTO=TCP
+2026-02-20T14:41:41Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=20790 DPORT=110 PROTO=TCP
+2026-02-20T14:37:44Z db-server-02 sshd[5485]: Accepted password for carol from 192.168.1.10 port 56375 ssh2
+2026-02-20T14:37:09Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.1 SPORT=42393 DPORT=143 PROTO=TCP
+2026-02-20T14:46:53Z gateway-fw-01 systemd: Started Daily apt download activities.
+2026-02-20T14:30:52Z workstation-dave sshd[4685]: Failed password for svc_monitor from 194.165.16.11 port 60976 ssh2
+2026-02-20T14:31:21Z workstation-alice cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:33:35Z workstation-alice anacron: Job 'cron.daily' started
+2026-02-20T15:10:41Z workstation-dave systemd: Started Daily apt download activities.
+2026-02-20T14:39:50Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.102 SPORT=5159 DPORT=5432 PROTO=TCP
+2026-02-20T15:05:32Z workstation-alice ntpd: Soliciting pool server 162.159.200.1
+2026-02-20T15:10:21Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.102 SPORT=10714 DPORT=3306 PROTO=TCP
+2026-02-20T15:05:23Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.100 SPORT=17070 DPORT=8443 PROTO=TCP
+2026-02-20T14:36:29Z workstation-dave sshd[4752]: Accepted password for bob from 192.168.1.101 port 32971 ssh2
+2026-02-20T15:02:46Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.21 SPORT=64303 DPORT=143 PROTO=TCP
+2026-02-20T15:02:48Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.103 SPORT=15786 DPORT=143 PROTO=TCP
+2026-02-20T14:23:07Z db-server-01 sshd[2462]: Accepted password for svc_monitor from 192.168.1.103 port 5505 ssh2
+2026-02-20T14:25:35Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.103 SPORT=38808 DPORT=445 PROTO=TCP
+2026-02-20T14:42:45Z web-server-02 sshd[7081]: Failed password for alice from 151.101.1.140 port 52580 ssh2
+2026-02-20T15:07:36Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.103 SPORT=17558 DPORT=80 PROTO=TCP
+2026-02-20T14:48:00Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.10 SPORT=40288 DPORT=25 PROTO=TCP
+2026-02-20T15:15:15Z db-server-01 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:27:53Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=56468 DPORT=22 PROTO=TCP
+2026-02-20T15:01:28Z db-server-01 sshd[3347]: Failed password for dave from 1.0.0.1 port 52187 ssh2
+2026-02-20T14:53:02Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.100 SPORT=38579 DPORT=22 PROTO=TCP
+2026-02-20T14:23:42Z web-server-01 systemd: Started Daily apt download activities.
+2026-02-20T15:09:47Z workstation-alice kernel: eth0: renamed from veth3a2b1c
+2026-02-20T15:01:06Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.100 SPORT=3003 DPORT=3306 PROTO=TCP
+2026-02-20T15:15:04Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.100 SPORT=45610 DPORT=80 PROTO=TCP
+2026-02-20T14:40:03Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.21 SPORT=62256 DPORT=53 PROTO=UDP
+2026-02-20T14:20:22Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=55361 DPORT=3306 PROTO=TCP
+2026-02-20T14:53:22Z web-server-01 sshd[4821]: Failed password for deploy from 45.33.32.156 port 35789 ssh2
+2026-02-20T14:38:40Z db-server-02 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T15:15:03Z web-server-02 sshd[4383]: Accepted password for svc_monitor from 192.168.1.1 port 54371 ssh2
+2026-02-20T14:20:15Z db-server-02 sshd[9089]: Accepted password for admin from 192.168.1.11 port 38933 ssh2
+2026-02-20T14:56:08Z gateway-fw-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T14:50:23Z db-server-01 systemd: Started Daily apt download activities.
+2026-02-20T14:51:35Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=45224 DPORT=3389 PROTO=TCP
+2026-02-20T14:43:23Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.101 SPORT=37141 DPORT=53 PROTO=UDP
+2026-02-20T15:07:59Z gateway-fw-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T14:50:31Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.1 SPORT=54939 DPORT=5432 PROTO=TCP
+2026-02-20T14:32:48Z db-server-02 sshd[1220]: Accepted password for alice from 192.168.1.21 port 46283 ssh2
+2026-02-20T15:07:28Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.101 SPORT=27920 DPORT=110 PROTO=TCP
+2026-02-20T14:28:51Z fileserver-01 sshd[9378]: Failed password for svc_monitor from 1.1.1.1 port 64879 ssh2
+2026-02-20T15:02:32Z fileserver-01 anacron: Job 'cron.daily' started
+2026-02-20T14:41:16Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.1 SPORT=21808 DPORT=5432 PROTO=TCP
+2026-02-20T14:53:22Z workstation-alice sshd[3046]: Accepted password for svc_monitor from 192.168.1.101 port 60838 ssh2
+2026-02-20T14:41:47Z workstation-bob kernel: eth0: renamed from veth3a2b1c
+2026-02-20T14:58:37Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.100 SPORT=5986 DPORT=25 PROTO=TCP
+2026-02-20T15:04:07Z workstation-carol sshd[7762]: Accepted password for alice from 192.168.1.11 port 5770 ssh2
+2026-02-20T14:44:46Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.103 SPORT=40874 DPORT=143 PROTO=TCP
+2026-02-20T15:01:48Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.30 SPORT=60211 DPORT=8443 PROTO=TCP
+2026-02-20T15:07:56Z workstation-carol ntpd: Soliciting pool server 162.159.200.1
+2026-02-20T14:33:11Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.21 SPORT=59098 DPORT=445 PROTO=TCP
+2026-02-20T15:07:16Z workstation-dave sshd[9557]: Accepted password for carol from 192.168.1.101 port 62036 ssh2
+2026-02-20T14:29:22Z web-server-02 sshd[8465]: Failed password for guest from 1.0.0.1 port 60363 ssh2
+2026-02-20T15:03:08Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.102 SPORT=42843 DPORT=3306 PROTO=TCP
+2026-02-20T14:50:51Z web-server-02 systemd: Started Daily apt download activities.
+2026-02-20T14:22:07Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.20 SPORT=15560 DPORT=80 PROTO=TCP
+2026-02-20T14:43:38Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.1 SPORT=54026 DPORT=22 PROTO=TCP
+2026-02-20T15:16:32Z db-server-02 sshd[3834]: Accepted password for carol from 192.168.1.30 port 62393 ssh2
+2026-02-20T14:21:12Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.102 SPORT=11254 DPORT=3389 PROTO=TCP
+2026-02-20T14:40:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.30 SPORT=2827 DPORT=22 PROTO=TCP
+2026-02-20T15:03:21Z db-server-01 anacron: Job 'cron.daily' started
+2026-02-20T14:37:05Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.103 SPORT=38671 DPORT=110 PROTO=TCP
+2026-02-20T14:57:59Z web-server-01 anacron: Job 'cron.daily' started
+2026-02-20T15:15:49Z gateway-fw-01 sshd[3221]: Failed password for svc_monitor from 8.8.4.4 port 28262 ssh2
+2026-02-20T14:20:51Z workstation-bob sshd[5288]: Failed password for root from 8.8.8.8 port 2168 ssh2
+2026-02-20T14:28:01Z workstation-bob anacron: Job 'cron.daily' started
+2026-02-20T14:30:14Z workstation-alice sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:21:48Z web-server-02 sshd[4941]: Accepted password for svc_monitor from 192.168.1.11 port 18185 ssh2
+2026-02-20T14:25:26Z web-server-02 sshd[3828]: Accepted password for svc_backup from 192.168.1.30 port 49904 ssh2
+2026-02-20T15:10:23Z db-server-02 sshd[4422]: Accepted password for svc_backup from 192.168.1.102 port 40509 ssh2
+2026-02-20T14:23:49Z web-server-02 postfix/pickup: startup
+2026-02-20T14:49:44Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.100 SPORT=9881 DPORT=3306 PROTO=TCP
+2026-02-20T15:13:33Z workstation-carol sshd[8426]: Accepted password for svc_monitor from 192.168.1.100 port 58910 ssh2
+2026-02-20T15:05:15Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.102 SPORT=62938 DPORT=3389 PROTO=TCP
+2026-02-20T14:54:11Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.20 SPORT=22799 DPORT=8443 PROTO=TCP
+2026-02-20T15:12:13Z ids-sensor-01 snort[1234]: [1:2000537:1] ET SCAN Nmap SYN Scan [Priority: 2] {TCP} 192.168.1.11:54000 -> 192.168.1.20:3306
+2026-02-20T14:54:06Z ids-sensor-01 snort[1234]: [1:2010937:1] ET SCAN SSH BruteForce [Priority: 2] {TCP} 45.33.32.156:54321 -> 192.168.1.11:22
+2026-02-20T15:12:37Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.11 SPORT=17156 DPORT=445 PROTO=TCP
+2026-02-20T14:28:22Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.20 SPORT=11798 DPORT=143 PROTO=TCP
+2026-02-20T15:09:52Z workstation-bob sshd[2235]: Accepted password for svc_monitor from 192.168.1.100 port 12239 ssh2
+2026-02-20T14:56:54Z fileserver-01 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T15:15:27Z web-server-02 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:20:49Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.11 SPORT=52646 DPORT=25 PROTO=TCP
+2026-02-20T14:21:19Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.103 SPORT=8665 DPORT=110 PROTO=TCP
+2026-02-20T14:27:28Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.20 SPORT=39603 DPORT=22 PROTO=TCP
+2026-02-20T15:07:24Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.21 SPORT=33563 DPORT=3389 PROTO=TCP
+2026-02-20T14:45:14Z workstation-bob sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:27:00Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.101 SPORT=47266 DPORT=8443 PROTO=TCP
+2026-02-20T14:48:29Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=2267 DPORT=25 PROTO=TCP
+2026-02-20T14:53:31Z web-server-01 sshd[4821]: Failed password for root from 45.33.32.156 port 46606 ssh2
+2026-02-20T14:58:05Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=16514 DPORT=8080 PROTO=TCP
+2026-02-20T14:29:00Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.20 SPORT=28599 DPORT=143 PROTO=TCP
+2026-02-20T14:29:10Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.30 SPORT=8884 DPORT=25 PROTO=TCP
+2026-02-20T14:38:37Z workstation-bob sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:30:34Z gateway-fw-01 sshd[5961]: Accepted password for carol from 192.168.1.101 port 15812 ssh2
+2026-02-20T14:55:04Z workstation-bob sshd[4703]: Accepted password for svc_monitor from 192.168.1.1 port 62906 ssh2
+2026-02-20T15:18:07Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.21 SPORT=18274 DPORT=3306 PROTO=TCP
+2026-02-20T15:13:10Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.30 SPORT=1169 DPORT=3389 PROTO=TCP
+2026-02-20T15:13:36Z db-server-01 sshd[1025]: Accepted password for carol from 192.168.1.30 port 41611 ssh2
+2026-02-20T15:15:15Z gateway-fw-01 sshd[4722]: Accepted password for dave from 192.168.1.11 port 54255 ssh2
+2026-02-20T15:18:11Z workstation-dave sshd[5338]: Accepted password for carol from 192.168.1.103 port 25281 ssh2
+2026-02-20T14:47:27Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.21 SPORT=40840 DPORT=5432 PROTO=TCP
+2026-02-20T14:33:20Z gateway-fw-01 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:21:19Z db-server-02 anacron: Job 'cron.daily' started
+2026-02-20T15:18:49Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.21 SPORT=26305 DPORT=3306 PROTO=TCP
+2026-02-20T15:10:34Z workstation-dave sshd[4061]: Failed password for administrator from 151.101.1.140 port 13614 ssh2
+2026-02-20T15:16:01Z gateway-fw-01 kernel: ALLOW IN=eth1 OUT=eth0 SRC=192.168.1.20 DST=185.220.101.1 SPORT=50000 DPORT=443 PROTO=TCP BYTES=1921566
+2026-02-20T14:50:30Z web-server-01 systemd: Started Daily apt download activities.
+2026-02-20T14:39:49Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.1 SPORT=47622 DPORT=22 PROTO=TCP
+2026-02-20T14:57:18Z workstation-dave sshd[2665]: Failed password for carol from 1.1.1.1 port 61669 ssh2
+2026-02-20T15:05:36Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=194.165.16.11 DST=192.168.1.30 SPORT=3937 DPORT=5432 PROTO=TCP
+2026-02-20T15:12:34Z workstation-carol sshd[8729]: Failed password for svc_backup from 1.1.1.1 port 25109 ssh2
+2026-02-20T14:54:11Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.100 SPORT=39895 DPORT=3306 PROTO=TCP
+2026-02-20T15:01:19Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.1 SPORT=60157 DPORT=143 PROTO=TCP
+2026-02-20T14:56:50Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.21 SPORT=31789 DPORT=80 PROTO=TCP
+2026-02-20T15:15:08Z web-server-01 sshd[2982]: Failed password for alice from 8.8.8.8 port 27395 ssh2
+2026-02-20T15:11:48Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.1 SPORT=28087 DPORT=8080 PROTO=TCP
+2026-02-20T14:54:50Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.102 SPORT=30857 DPORT=3306 PROTO=TCP
+2026-02-20T14:23:20Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=26265 DPORT=3306 PROTO=TCP
+2026-02-20T14:53:40Z web-server-01 sshd[4821]: Failed password for root from 45.33.32.156 port 9053 ssh2
+2026-02-20T14:26:49Z web-server-02 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T15:17:34Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.1 SPORT=24964 DPORT=5432 PROTO=TCP
+2026-02-20T14:57:04Z gateway-fw-01 systemd: Started Daily apt download activities.
+2026-02-20T14:57:40Z db-server-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T15:16:26Z db-server-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T14:38:19Z db-server-01 sshd[2837]: Accepted password for dave from 192.168.1.101 port 17941 ssh2
+2026-02-20T14:53:20Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.1 SPORT=51860 DPORT=80 PROTO=TCP
+2026-02-20T14:53:37Z web-server-01 sshd[4821]: Failed password for admin from 45.33.32.156 port 27238 ssh2
+2026-02-20T14:53:07Z web-server-01 sshd[4821]: Failed password for root from 45.33.32.156 port 50034 ssh2
+2026-02-20T14:34:00Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.11 SPORT=38106 DPORT=3306 PROTO=TCP
+2026-02-20T14:43:26Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.30 SPORT=44492 DPORT=443 PROTO=TCP
+2026-02-20T14:19:58Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.20 SPORT=12165 DPORT=445 PROTO=TCP
+2026-02-20T14:22:32Z db-server-01 sshd[1106]: Failed password for admin from 1.0.0.1 port 15491 ssh2
+2026-02-20T15:06:07Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.21 SPORT=58925 DPORT=22 PROTO=TCP
+2026-02-20T14:25:06Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.102 SPORT=39661 DPORT=3389 PROTO=TCP
+2026-02-20T14:54:53Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=45.33.32.156 DST=192.168.1.100 SPORT=34005 DPORT=3306 PROTO=TCP
+2026-02-20T14:53:01Z web-server-01 sshd[4821]: Failed password for admin from 45.33.32.156 port 10289 ssh2
+2026-02-20T14:53:34Z web-server-01 sshd[4821]: Failed password for admin from 45.33.32.156 port 40592 ssh2
+2026-02-20T15:16:51Z gateway-fw-01 kernel: ALLOW IN=eth1 OUT=eth0 SRC=192.168.1.20 DST=185.220.101.1 SPORT=50005 DPORT=443 PROTO=TCP BYTES=1534460
+2026-02-20T14:42:13Z db-server-01 sshd[9870]: Failed password for svc_monitor from 1.1.1.1 port 60386 ssh2
+2026-02-20T14:54:31Z workstation-dave sshd[4645]: Accepted password for bob from 192.168.1.103 port 52684 ssh2
+2026-02-20T14:30:28Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.10 SPORT=14407 DPORT=80 PROTO=TCP
+2026-02-20T14:37:41Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.21 SPORT=7199 DPORT=80 PROTO=TCP
+2026-02-20T15:03:49Z db-server-02 postfix/pickup: startup
+2026-02-20T14:29:12Z web-server-01 sshd[5963]: Failed password for svc_monitor from 8.8.4.4 port 55238 ssh2
+2026-02-20T14:51:32Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.10 SPORT=19804 DPORT=22 PROTO=TCP
+2026-02-20T14:38:32Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.11 SPORT=29696 DPORT=5432 PROTO=TCP
+2026-02-20T14:28:30Z web-server-01 cron: pam_unix(cron:session): session opened for user root
+2026-02-20T15:14:07Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.103 SPORT=51789 DPORT=110 PROTO=TCP
+2026-02-20T15:16:25Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.30 SPORT=28834 DPORT=3306 PROTO=TCP
+2026-02-20T14:30:21Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.10 SPORT=44696 DPORT=143 PROTO=TCP
+2026-02-20T15:16:21Z gateway-fw-01 kernel: ALLOW IN=eth1 OUT=eth0 SRC=192.168.1.20 DST=185.220.101.1 SPORT=50002 DPORT=443 PROTO=TCP BYTES=731262
+2026-02-20T14:25:00Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.100 SPORT=50813 DPORT=3306 PROTO=TCP
+2026-02-20T14:31:11Z workstation-dave anacron: Job 'cron.daily' started
+2026-02-20T14:53:49Z web-server-01 sshd[4821]: Failed password for root from 45.33.32.156 port 61083 ssh2
+2026-02-20T14:28:59Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.21 SPORT=19464 DPORT=80 PROTO=TCP
+2026-02-20T14:21:50Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.102 SPORT=39895 DPORT=25 PROTO=TCP
+2026-02-20T15:16:03Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.100 SPORT=64267 DPORT=3306 PROTO=TCP
+2026-02-20T14:53:19Z web-server-01 sshd[4821]: Failed password for ubuntu from 45.33.32.156 port 59810 ssh2
+2026-02-20T14:26:05Z workstation-bob kernel: eth0: renamed from veth3a2b1c
+2026-02-20T14:41:46Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.103 SPORT=52955 DPORT=110 PROTO=TCP
+2026-02-20T15:16:56Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.101 SPORT=52060 DPORT=3389 PROTO=TCP
+2026-02-20T14:40:23Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.20 SPORT=7528 DPORT=5432 PROTO=TCP
+2026-02-20T14:44:00Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.20 SPORT=38575 DPORT=110 PROTO=TCP
+2026-02-20T14:39:47Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.20 SPORT=43320 DPORT=3306 PROTO=TCP
+2026-02-20T15:18:11Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.103 SPORT=12598 DPORT=5432 PROTO=TCP
+2026-02-20T14:24:20Z db-server-01 sshd[8535]: Accepted password for svc_backup from 192.168.1.100 port 18649 ssh2
+2026-02-20T14:49:46Z workstation-alice sshd[3852]: Failed password for bob from 8.8.4.4 port 37449 ssh2
+2026-02-20T15:16:12Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.101 SPORT=12929 DPORT=143 PROTO=TCP
+2026-02-20T14:20:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.100 SPORT=19814 DPORT=53 PROTO=UDP
+2026-02-20T15:08:18Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.102 SPORT=8002 DPORT=53 PROTO=UDP
+2026-02-20T14:56:48Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.1 SPORT=40392 DPORT=3389 PROTO=TCP
+2026-02-20T14:51:50Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.21 SPORT=48006 DPORT=53 PROTO=UDP
+2026-02-20T14:56:00Z workstation-alice postfix/pickup: startup
+2026-02-20T15:07:01Z db-server-02 systemd: Started Daily apt download activities.
+2026-02-20T14:52:07Z workstation-alice systemd: Started Daily apt download activities.
+2026-02-20T15:17:21Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.20 SPORT=27122 DPORT=110 PROTO=TCP
+2026-02-20T15:17:44Z gateway-fw-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T15:10:13Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.101 SPORT=38478 DPORT=445 PROTO=TCP
+2026-02-20T14:57:21Z workstation-carol sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:58:13Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.11 SPORT=61629 DPORT=3389 PROTO=TCP
+2026-02-20T15:12:00Z workstation-carol sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:21:07Z db-server-01 postfix/pickup: startup
+2026-02-20T15:08:43Z web-server-01 sshd[8838]: Accepted password for alice from 192.168.1.30 port 35929 ssh2
+2026-02-20T14:53:04Z web-server-01 sshd[4821]: Failed password for admin from 45.33.32.156 port 2078 ssh2
+2026-02-20T15:02:49Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.101 SPORT=20671 DPORT=3306 PROTO=TCP
+2026-02-20T14:35:02Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.102 SPORT=11321 DPORT=110 PROTO=TCP
+2026-02-20T14:43:05Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.30 SPORT=33418 DPORT=25 PROTO=TCP
+2026-02-20T14:45:34Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.102 SPORT=33028 DPORT=8443 PROTO=TCP
+2026-02-20T14:51:18Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.30 SPORT=63674 DPORT=25 PROTO=TCP
+2026-02-20T14:40:33Z workstation-carol sshd[7479]: Accepted password for admin from 192.168.1.20 port 46343 ssh2
+2026-02-20T15:09:23Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.11 SPORT=40386 DPORT=143 PROTO=TCP
+2026-02-20T14:37:47Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=34919 DPORT=445 PROTO=TCP
+2026-02-20T14:34:08Z db-server-02 sshd[6698]: Accepted password for carol from 192.168.1.102 port 33018 ssh2
+2026-02-20T15:06:45Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=15604 DPORT=5432 PROTO=TCP
+2026-02-20T15:08:56Z workstation-bob sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:20:01Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.10 SPORT=43066 DPORT=22 PROTO=TCP
+2026-02-20T15:07:28Z db-server-01 systemd: Started Daily apt download activities.
+2026-02-20T14:36:00Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.100 SPORT=39254 DPORT=3389 PROTO=TCP
+2026-02-20T14:36:35Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.100 SPORT=18656 DPORT=53 PROTO=UDP
+2026-02-20T15:16:41Z gateway-fw-01 kernel: ALLOW IN=eth1 OUT=eth0 SRC=192.168.1.20 DST=185.220.101.1 SPORT=50004 DPORT=443 PROTO=TCP BYTES=1110140
+2026-02-20T15:18:02Z db-server-02 sshd[4560]: Accepted password for alice from 192.168.1.101 port 22457 ssh2
+2026-02-20T14:31:26Z workstation-bob cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:33:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.10 SPORT=30832 DPORT=5432 PROTO=TCP
+2026-02-20T14:57:06Z workstation-carol sshd[1870]: Failed password for guest from 45.33.32.156 port 25797 ssh2
+2026-02-20T14:52:37Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.30 SPORT=62200 DPORT=22 PROTO=TCP
+2026-02-20T14:56:34Z workstation-carol sshd[6382]: Accepted password for dave from 192.168.1.103 port 60443 ssh2
+2026-02-20T14:58:33Z web-server-01 postfix/pickup: startup
+2026-02-20T14:55:13Z web-server-01 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T15:08:22Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.21 SPORT=34235 DPORT=53 PROTO=UDP
+2026-02-20T15:12:43Z workstation-dave rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T14:59:01Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.102 SPORT=42659 DPORT=22 PROTO=TCP
+2026-02-20T14:30:28Z gateway-fw-01 sshd[9983]: Failed password for administrator from 1.0.0.1 port 52541 ssh2
+2026-02-20T14:20:17Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.103 SPORT=29753 DPORT=22 PROTO=TCP
+2026-02-20T14:27:29Z fileserver-01 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T15:09:06Z web-server-01 sshd[1775]: Accepted password for dave from 192.168.1.1 port 51051 ssh2
+2026-02-20T14:55:26Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.102 SPORT=58068 DPORT=25 PROTO=TCP
+2026-02-20T14:30:08Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.102 SPORT=9396 DPORT=3389 PROTO=TCP
+2026-02-20T14:30:51Z fileserver-01 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T15:03:16Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.100 SPORT=26736 DPORT=25 PROTO=TCP
+2026-02-20T14:28:22Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=35260 DPORT=80 PROTO=TCP
+2026-02-20T15:12:07Z gateway-fw-01 kernel: DENY IN=eth1 OUT=eth1 SRC=192.168.1.11 DST=192.168.1.21 SPORT=54000 DPORT=22 PROTO=TCP
+2026-02-20T14:54:32Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.101 SPORT=45890 DPORT=3389 PROTO=TCP
+2026-02-20T14:50:59Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.20 SPORT=23682 DPORT=22 PROTO=TCP
+2026-02-20T14:24:48Z db-server-02 sshd[2055]: Accepted password for svc_backup from 192.168.1.11 port 14344 ssh2
+2026-02-20T14:20:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.100 SPORT=8608 DPORT=3306 PROTO=TCP
+2026-02-20T14:53:10Z web-server-01 sshd[4821]: Failed password for ubuntu from 45.33.32.156 port 26706 ssh2
+2026-02-20T14:57:19Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.21 SPORT=40422 DPORT=5432 PROTO=TCP
+2026-02-20T15:08:20Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.102 SPORT=54036 DPORT=445 PROTO=TCP
+2026-02-20T15:07:31Z workstation-carol sshd[1564]: Accepted password for carol from 192.168.1.101 port 55776 ssh2
+2026-02-20T15:00:21Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.100 SPORT=40707 DPORT=445 PROTO=TCP
+2026-02-20T15:16:40Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.100 SPORT=51097 DPORT=80 PROTO=TCP
+2026-02-20T15:17:06Z ids-sensor-01 snort[1234]: [1:2019401:1] ET TROJAN Possible Data Exfiltration Large Outbound [Priority: 1] {TCP} 192.168.1.20:50000 -> 185.220.101.1:443
+2026-02-20T14:57:02Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.20 SPORT=43708 DPORT=5432 PROTO=TCP
+2026-02-20T14:52:30Z web-server-01 systemd: Started Daily apt download activities.
+2026-02-20T14:43:01Z fileserver-01 sshd[9484]: Failed password for svc_monitor from 8.8.8.8 port 44560 ssh2
+2026-02-20T15:03:42Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.1 SPORT=20363 DPORT=8080 PROTO=TCP
+2026-02-20T14:37:45Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.103 SPORT=55178 DPORT=445 PROTO=TCP
+2026-02-20T14:39:02Z web-server-02 sshd[2978]: Failed password for svc_backup from 1.0.0.1 port 11217 ssh2
+2026-02-20T14:19:26Z gateway-fw-01 sshd[7575]: Accepted password for admin from 192.168.1.101 port 46273 ssh2
+2026-02-20T15:12:05Z gateway-fw-01 kernel: DENY IN=eth1 OUT=eth1 SRC=192.168.1.11 DST=192.168.1.103 SPORT=54000 DPORT=3306 PROTO=TCP
+2026-02-20T14:49:34Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.102 SPORT=15413 DPORT=443 PROTO=TCP
+2026-02-20T14:26:59Z db-server-01 sshd[6637]: Failed password for guest from 1.0.0.1 port 9220 ssh2
+2026-02-20T15:17:21Z workstation-carol sshd[6026]: Accepted password for svc_backup from 192.168.1.30 port 25440 ssh2
+2026-02-20T15:12:09Z gateway-fw-01 kernel: DENY IN=eth1 OUT=eth1 SRC=192.168.1.11 DST=192.168.1.30 SPORT=54000 DPORT=3306 PROTO=TCP
+2026-02-20T14:38:55Z web-server-01 rsyslogd: imjournal: journal files changed, reloading
+2026-02-20T14:39:59Z db-server-01 kernel: eth0: renamed from veth3a2b1c
+2026-02-20T14:46:16Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.20 SPORT=29343 DPORT=3389 PROTO=TCP
+2026-02-20T14:53:41Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.20 SPORT=53971 DPORT=5432 PROTO=TCP
+2026-02-20T15:10:50Z workstation-bob sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:26:19Z workstation-dave sshd[5372]: Failed password for dave from 104.21.50.100 port 57897 ssh2
+2026-02-20T14:50:17Z workstation-bob sshd[2862]: Failed password for bob from 151.101.1.140 port 29689 ssh2
+2026-02-20T15:05:14Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.11 SPORT=23376 DPORT=80 PROTO=TCP
+2026-02-20T14:50:16Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.100 SPORT=48444 DPORT=443 PROTO=TCP
+2026-02-20T14:37:18Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.10 SPORT=26870 DPORT=445 PROTO=TCP
+2026-02-20T15:09:45Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.1 SPORT=26282 DPORT=53 PROTO=UDP
+2026-02-20T14:37:20Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=36988 DPORT=143 PROTO=TCP
+2026-02-20T14:54:37Z web-server-02 sshd[2085]: Failed password for test from 8.8.8.8 port 14829 ssh2
+2026-02-20T14:38:40Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.100 SPORT=42992 DPORT=443 PROTO=TCP
+2026-02-20T15:12:00Z web-server-02 kernel: eth0: renamed from veth3a2b1c
+2026-02-20T15:14:14Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.30 SPORT=27490 DPORT=443 PROTO=TCP
+2026-02-20T14:32:55Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.11 SPORT=49246 DPORT=5432 PROTO=TCP
+2026-02-20T14:53:42Z workstation-dave systemd: Started Daily apt download activities.
+2026-02-20T15:12:26Z gateway-fw-01 kernel: ALLOW IN=eth1 OUT=eth1 SRC=192.168.1.11 DST=192.168.1.20 SPORT=54100 DPORT=3306 PROTO=TCP
+2026-02-20T15:18:29Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.20 SPORT=33144 DPORT=143 PROTO=TCP
+2026-02-20T15:03:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.21 SPORT=45530 DPORT=143 PROTO=TCP
+2026-02-20T14:40:34Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.21 SPORT=4215 DPORT=5432 PROTO=TCP
+2026-02-20T15:16:26Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=4156 DPORT=22 PROTO=TCP
+2026-02-20T15:03:30Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=46944 DPORT=143 PROTO=TCP
+2026-02-20T14:49:45Z db-server-01 systemd: Started Daily apt download activities.
+2026-02-20T14:42:09Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.21 SPORT=53633 DPORT=445 PROTO=TCP
+2026-02-20T14:58:44Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.21 SPORT=2485 DPORT=8443 PROTO=TCP
+2026-02-20T15:01:01Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.1 SPORT=27209 DPORT=443 PROTO=TCP
+2026-02-20T14:46:09Z workstation-carol sshd[4566]: Accepted password for admin from 192.168.1.10 port 61362 ssh2
+2026-02-20T15:14:37Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.20 SPORT=29065 DPORT=443 PROTO=TCP
+2026-02-20T14:23:17Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.21 SPORT=13863 DPORT=25 PROTO=TCP
+2026-02-20T15:01:57Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.101 SPORT=6796 DPORT=53 PROTO=UDP
+2026-02-20T14:34:08Z web-server-02 sshd[7787]: Failed password for bob from 1.1.1.1 port 18888 ssh2
+2026-02-20T14:41:31Z db-server-02 anacron: Job 'cron.daily' started
+2026-02-20T14:20:48Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.102 SPORT=16790 DPORT=80 PROTO=TCP
+2026-02-20T14:51:21Z web-server-01 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:28:26Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=18838 DPORT=80 PROTO=TCP
+2026-02-20T15:04:42Z fileserver-01 postfix/pickup: startup
+2026-02-20T15:07:27Z gateway-fw-01 sshd[9261]: Accepted password for svc_backup from 192.168.1.103 port 13298 ssh2
+2026-02-20T14:49:04Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.20 SPORT=12371 DPORT=110 PROTO=TCP
+2026-02-20T15:06:23Z fileserver-01 cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:39:25Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.20 SPORT=52455 DPORT=3306 PROTO=TCP
+2026-02-20T15:12:21Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=45.33.32.156 DST=192.168.1.10 SPORT=53382 DPORT=5432 PROTO=TCP
+2026-02-20T15:15:12Z web-server-02 sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T14:34:22Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.10 SPORT=25066 DPORT=22 PROTO=TCP
+2026-02-20T14:45:36Z web-server-02 sshd[7073]: Failed password for svc_monitor from 104.21.50.100 port 24891 ssh2
+2026-02-20T14:22:45Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.11 SPORT=43558 DPORT=53 PROTO=UDP
+2026-02-20T14:56:13Z gateway-fw-01 sshd[2880]: Accepted password for alice from 192.168.1.21 port 17664 ssh2
+2026-02-20T14:57:16Z db-server-02 cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:53:46Z web-server-01 sshd[4821]: Failed password for ubuntu from 45.33.32.156 port 41490 ssh2
+2026-02-20T14:30:25Z web-server-01 sshd[3723]: Failed password for admin from 8.8.8.8 port 46415 ssh2
+2026-02-20T14:34:55Z workstation-alice sshd: Server listening on 0.0.0.0 port 22.
+2026-02-20T15:03:19Z db-server-01 sudo: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+2026-02-20T14:26:39Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.21 SPORT=23553 DPORT=8080 PROTO=TCP
+2026-02-20T14:47:17Z workstation-bob sshd[9193]: Accepted password for dave from 192.168.1.21 port 32109 ssh2
+2026-02-20T15:08:03Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=1.0.0.1 DST=192.168.1.21 SPORT=40904 DPORT=445 PROTO=TCP
+2026-02-20T14:53:52Z web-server-01 sshd[4821]: Failed password for admin from 45.33.32.156 port 42283 ssh2
+2026-02-20T15:15:28Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.101 SPORT=4841 DPORT=5432 PROTO=TCP
+2026-02-20T14:26:48Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.11 SPORT=1582 DPORT=3306 PROTO=TCP
+2026-02-20T15:06:42Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=3164 DPORT=443 PROTO=TCP
+2026-02-20T14:39:35Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.30 SPORT=39232 DPORT=25 PROTO=TCP
+2026-02-20T14:33:00Z workstation-dave sshd[1800]: Accepted password for admin from 192.168.1.20 port 22168 ssh2
+2026-02-20T15:02:03Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.101 SPORT=57607 DPORT=110 PROTO=TCP
+2026-02-20T14:25:47Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.4.4 DST=192.168.1.102 SPORT=52614 DPORT=3389 PROTO=TCP
+2026-02-20T14:38:26Z db-server-02 ntpd: Soliciting pool server 162.159.200.1
+2026-02-20T14:49:12Z gateway-fw-01 sshd[9920]: Failed password for svc_backup from 54.230.10.1 port 14997 ssh2
+2026-02-20T15:08:25Z db-server-02 kernel: eth0: renamed from veth3a2b1c
+2026-02-20T14:45:12Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=151.101.1.140 DST=192.168.1.11 SPORT=23732 DPORT=445 PROTO=TCP
+2026-02-20T14:35:54Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.100 SPORT=60693 DPORT=443 PROTO=TCP
+2026-02-20T15:13:21Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.103 SPORT=1627 DPORT=25 PROTO=TCP
+2026-02-20T14:33:04Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.100 SPORT=14910 DPORT=3306 PROTO=TCP
+2026-02-20T15:18:47Z workstation-alice systemd: Started Daily apt download activities.
+2026-02-20T15:07:58Z db-server-01 postfix/pickup: startup
+2026-02-20T14:53:28Z web-server-01 sshd[4821]: Failed password for deploy from 45.33.32.156 port 56180 ssh2
+2026-02-20T15:16:11Z gateway-fw-01 kernel: ALLOW IN=eth1 OUT=eth0 SRC=192.168.1.20 DST=185.220.101.1 SPORT=50001 DPORT=443 PROTO=TCP BYTES=1650651
+2026-02-20T15:14:59Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=1.1.1.1 DST=192.168.1.30 SPORT=20021 DPORT=3306 PROTO=TCP
+2026-02-20T15:14:02Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.103 SPORT=33381 DPORT=25 PROTO=TCP
+2026-02-20T15:02:09Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.11 SPORT=28673 DPORT=5432 PROTO=TCP
+2026-02-20T14:26:16Z gateway-fw-01 kernel: DENY IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.21 SPORT=53201 DPORT=3389 PROTO=TCP
+2026-02-20T14:27:27Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=8.8.8.8 DST=192.168.1.103 SPORT=59418 DPORT=110 PROTO=TCP
+2026-02-20T14:54:52Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=104.21.50.100 DST=192.168.1.30 SPORT=39206 DPORT=3306 PROTO=TCP
+2026-02-20T14:52:09Z workstation-carol cron: pam_unix(cron:session): session opened for user root
+2026-02-20T14:40:14Z gateway-fw-01 kernel: ALLOW IN=eth0 OUT=eth1 SRC=54.230.10.1 DST=192.168.1.101 SPORT=60384 DPORT=22 PROTO=TCP

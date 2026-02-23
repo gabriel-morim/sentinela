@@ -1,0 +1,20 @@
+# Environment variables — NEVER commit API keys
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Monitor state and alert log (local runtime files)
+monitor/.monitor_state.json
+monitor/alerts.jsonl
+
+# Elasticsearch data
+data/
+
+# OS
+.DS_Store
+Thumbs.dbsynthetic_logs.txt 

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SENTINELA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #090c10;
+    --bg2:       #0d1117;
+    --bg3:       #161b22;
+    --border:    #21262d;
+    --border2:   #30363d;
+    --text:      #c9d1d9;
+    --text2:     #8b949e;
+    --text3:     #484f58;
+    --green:     #39d353;
+    --cyan:      #58c8e3;
+    --cyan2:     #1c6679;
+    --yellow:    #e3b341;
+    --red:       #f85149;
+    --critical:  #ff4444;
+    --purple:    #bc8cff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Rajdhani',sans-serif; font-size:15px; min-height:100vh; overflow-x:hidden; }
+  body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px); }
+
+  header { display:flex; align-items:center; justify-content:space-between; padding:16px 28px; border-bottom:1px solid var(--border); background:var(--bg2); position:sticky; top:0; z-index:100; }
+  .logo { display:flex; align-items:center; gap:12px; }
+  .logo-icon { width:32px; height:32px; border:2px solid var(--cyan); border-radius:6px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .logo-icon::after { content:''; position:absolute; width:16px; height:16px; border:2px solid var(--cyan); border-radius:50%; animation:pulse-ring 2s ease-out infinite; }
+  @keyframes pulse-ring { 0%{transform:scale(0.3);opacity:1} 100%{transform:scale(1.4);opacity:0} }
+  .logo-text { font-family:'Share Tech Mono',monospace; font-size:20px; color:var(--cyan); letter-spacing:4px; }
+  .logo-sub  { font-size:11px; color:var(--text3); letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
+  .header-right { display:flex; align-items:center; gap:20px; }
+  .status-dot { width:8px; height:8px; background:var(--green); border-radius:50%; animation:blink 2s ease-in-out infinite; box-shadow:0 0 8px var(--green); }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .status-text { font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--green); letter-spacing:1px; }
+  .time-display { font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--text2); }
+
+  nav { display:flex; gap:2px; padding:0 28px; background:var(--bg2); border-bottom:1px solid var(--border); }
+  .nav-btn { padding:10px 20px; background:none; border:none; color:var(--text2); font-family:'Rajdhani',sans-serif; font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
+  .nav-btn:hover { color:var(--text); }
+  .nav-btn.active { color:var(--cyan); border-bottom-color:var(--cyan); }
+
+  main { padding:24px 28px; max-width:1400px; margin:0 auto; }
+  .panel { display:none; animation:fadeIn 0.3s ease; }
+  .panel.active { display:block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+  .card { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:20px; }
+  .card-title { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--text2); margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+  .card-title::before { content:''; width:3px; height:14px; background:var(--cyan); border-radius:2px; }
+
+  .stats-row { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:20px; }
+  .stat-card { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:16px; text-align:center; position:relative; overflow:hidden; }
+  .stat-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; }
+  .stat-card.total::after    { background:var(--cyan); }
+  .stat-card.critical::after { background:var(--critical); }
+  .stat-card.high::after     { background:var(--red); }
+  .stat-card.medium::after   { background:var(--yellow); }
+  .stat-card.threats::after  { background:var(--purple); }
+  .stat-value { font-family:'Share Tech Mono',monospace; font-size:32px; line-height:1; margin-bottom:6px; }
+  .stat-card.total .stat-value    { color:var(--cyan); }
+  .stat-card.critical .stat-value { color:var(--critical); }
+  .stat-card.high .stat-value     { color:var(--red); }
+  .stat-card.medium .stat-value   { color:var(--yellow); }
+  .stat-card.threats .stat-value  { color:var(--purple); }
+  .stat-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text3); }
+
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .grid-3 { display:grid; grid-template-columns:2fr 1fr; gap:16px; margin-bottom:16px; }
+
+  .event-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .event-table th { text-align:left; padding:8px 12px; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text3); border-bottom:1px solid var(--border); }
+  .event-table td { padding:9px 12px; border-bottom:1px solid var(--border); font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text2); }
+  .event-table tr:hover td { background:var(--bg3); }
+  .event-table td.message { font-family:'Rajdhani',sans-serif; font-size:13px; color:var(--text); max-width:340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+  .badge { display:inline-block; padding:2px 8px; border-radius:3px; font-family:'Share Tech Mono',monospace; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+  .badge-critical { background:rgba(255,68,68,0.15);  color:var(--critical); border:1px solid rgba(255,68,68,0.3); }
+  .badge-high     { background:rgba(248,81,73,0.15);  color:var(--red);      border:1px solid rgba(248,81,73,0.3); }
+  .badge-medium   { background:rgba(227,179,65,0.15); color:var(--yellow);   border:1px solid rgba(227,179,65,0.3); }
+  .badge-low      { background:rgba(88,200,227,0.1);  color:var(--cyan);     border:1px solid rgba(88,200,227,0.2); }
+  .badge-info     { background:rgba(139,148,158,0.1); color:var(--text2);    border:1px solid rgba(139,148,158,0.2); }
+
+  .tag { display:inline-block; padding:1px 6px; border-radius:2px; font-size:10px; font-family:'Share Tech Mono',monospace; margin:1px; }
+  .tag-threat  { background:rgba(255,68,68,0.1);   color:#ff8888; }
+  .tag-ids     { background:rgba(188,140,255,0.1); color:var(--purple); }
+  .tag-scan    { background:rgba(227,179,65,0.1);  color:var(--yellow); }
+  .tag-default { background:var(--bg3);            color:var(--text3); }
+
+  .ip-list { list-style:none; }
+  .ip-item { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border); gap:12px; }
+  .ip-item:last-child { border-bottom:none; }
+  .ip-addr { font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--red); }
+  .ip-count { font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text2); white-space:nowrap; }
+  .ip-bar-wrap { flex:1; height:4px; background:var(--bg3); border-radius:2px; overflow:hidden; }
+  .ip-bar { height:100%; background:var(--red); border-radius:2px; transition:width 0.8s ease; }
+
+  .btn { padding:9px 20px; border-radius:6px; font-family:'Rajdhani',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all 0.2s; border:none; }
+  .btn-primary   { background:var(--cyan2); color:var(--cyan); border:1px solid var(--cyan); }
+  .btn-primary:hover { background:var(--cyan); color:var(--bg); }
+  .btn-secondary { background:transparent; color:var(--text2); border:1px solid var(--border2); }
+  .btn-secondary:hover { border-color:var(--cyan); color:var(--cyan); }
+  .btn-danger    { background:rgba(248,81,73,0.1); color:var(--red); border:1px solid rgba(248,81,73,0.3); }
+  .btn-danger:hover { background:rgba(248,81,73,0.2); }
+  .btn:disabled  { opacity:0.4; cursor:not-allowed; }
+
+  .analysis-toolbar { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; align-items:center; }
+  .ip-input { padding:9px 14px; background:var(--bg3); border:1px solid var(--border2); border-radius:6px; color:var(--text); font-family:'Share Tech Mono',monospace; font-size:13px; width:200px; outline:none; }
+  .ip-input:focus { border-color:var(--cyan); }
+  .analysis-output { background:var(--bg2); border:1px solid var(--border); border-radius:8px; min-height:200px; position:relative; }
+  .analysis-placeholder { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px; color:var(--text3); text-align:center; gap:12px; }
+  .analysis-placeholder .icon { font-size:48px; opacity:0.3; }
+  .analysis-content { padding:24px; line-height:1.7; color:var(--text); font-family:'Rajdhani',sans-serif; font-size:15px; display:none; }
+  .analysis-content h1 { font-size:22px; font-weight:700; color:var(--cyan); margin:0 0 8px; }
+  .analysis-content h2 { font-size:16px; font-weight:700; color:var(--yellow); margin:24px 0 10px; letter-spacing:2px; text-transform:uppercase; border-bottom:1px solid var(--border); padding-bottom:6px; }
+  .analysis-content h3 { font-size:14px; font-weight:700; color:var(--text); margin:16px 0 8px; }
+  .analysis-content p  { margin-bottom:12px; }
+  .analysis-content ul, .analysis-content ol { margin:8px 0 12px 20px; }
+  .analysis-content li { margin-bottom:6px; }
+  .analysis-content code { font-family:'Share Tech Mono',monospace; font-size:12px; background:var(--bg3); border:1px solid var(--border2); border-radius:3px; padding:2px 6px; color:var(--cyan); }
+  .analysis-content pre { background:var(--bg); border:1px solid var(--border2); border-radius:6px; padding:16px; overflow-x:auto; margin:12px 0; }
+  .analysis-content pre code { background:none; border:none; padding:0; color:var(--green); font-size:12px; line-height:1.6; }
+  .analysis-content table { width:100%; border-collapse:collapse; margin:12px 0; font-size:13px; }
+  .analysis-content th { text-align:left; padding:8px 12px; background:var(--bg3); border:1px solid var(--border); color:var(--text2); font-size:11px; text-transform:uppercase; }
+  .analysis-content td { padding:8px 12px; border:1px solid var(--border); }
+  .analysis-content strong { color:var(--yellow); font-weight:700; }
+  .analysis-content em    { color:var(--cyan); font-style:normal; }
+  .error-box { background:rgba(248,81,73,0.05); border:1px solid rgba(248,81,73,0.2); border-radius:6px; padding:16px; color:var(--red); font-family:'Share Tech Mono',monospace; font-size:12px; display:none; margin-bottom:12px; }
+  .spinner-wrap { display:none; flex-direction:column; align-items:center; justify-content:center; padding:60px; gap:20px; }
+  .spinner { width:40px; height:40px; border:2px solid var(--border2); border-top-color:var(--cyan); border-radius:50%; animation:spin 0.8s linear infinite; }
+  @keyframes spin { to{transform:rotate(360deg)} }
+  .spinner-text { font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text2); letter-spacing:2px; animation:type-pulse 1.5s ease-in-out infinite; }
+  @keyframes type-pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  ::-webkit-scrollbar { width:6px; height:6px; }
+  ::-webkit-scrollbar-track { background:var(--bg); }
+  ::-webkit-scrollbar-thumb { background:var(--border2); border-radius:3px; }
+
+  @media(max-width:900px) {
+    .stats-row { grid-template-columns:repeat(3,1fr); }
+    .grid-2, .grid-3 { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon"></div>
+    <div>
+      <div class="logo-text">SENTINELA</div>
+      <div class="logo-sub">Security Operations</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="status-dot"></div>
+      <span class="status-text">MONITORING</span>
+    </div>
+    <div class="time-display" id="clock">--:--:-- UTC</div>
+  </div>
+</header>
+
+<nav>
+  <button class="nav-btn active" onclick="showPanel('dashboard',this)">Dashboard</button>
+  <button class="nav-btn" onclick="showPanel('events',this)">Events</button>
+  <button class="nav-btn" onclick="showPanel('analysis',this)">AI Analysis</button>
+  <button class="nav-btn" onclick="showPanel('alerts',this)">Alerts <span id="alert-badge" style="display:none;background:var(--red);color:white;border-radius:10px;padding:1px 7px;font-size:11px;margin-left:4px">0</span></button>
+</nav>
+
+<main>
+
+  <!-- DASHBOARD -->
+  <div class="panel active" id="panel-dashboard">
+    <div class="stats-row">
+      <div class="stat-card total">    <div class="stat-value" id="stat-total">—</div>    <div class="stat-label">Total Events</div></div>
+      <div class="stat-card critical"> <div class="stat-value" id="stat-critical">—</div> <div class="stat-label">Critical</div></div>
+      <div class="stat-card high">     <div class="stat-value" id="stat-high">—</div>     <div class="stat-label">High</div></div>
+      <div class="stat-card medium">   <div class="stat-value" id="stat-medium">—</div>   <div class="stat-label">Medium</div></div>
+      <div class="stat-card threats">  <div class="stat-value" id="stat-threats">—</div>  <div class="stat-label">Threat Intel Hits</div></div>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">Recent High/Critical Events</div>
+        <div style="overflow-x:auto">
+          <table class="event-table">
+            <thead><tr><th>Time</th><th>Severity</th><th>Type</th><th>Source IP</th><th>Message</th></tr></thead>
+            <tbody id="recent-events-tbody"><tr><td colspan="5" style="text-align:center;color:var(--text3);padding:24px">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Top Threat IPs</div>
+        <ul class="ip-list" id="top-ips-list"><li style="color:var(--text3);font-size:13px;padding:12px 0">Loading...</li></ul>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Events by Type</div>
+        <div id="type-breakdown" style="display:flex;flex-direction:column;gap:10px"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Active Tags</div>
+        <div id="tags-breakdown" style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <div class="panel" id="panel-events">
+    <div class="card">
+      <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
+        <div class="card-title" style="margin-bottom:0">Event Log</div>
+        <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap">
+          <select id="filter-severity" onchange="loadEvents()" style="background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:6px 10px;border-radius:4px;font-family:'Rajdhani',sans-serif;font-size:13px;outline:none">
+            <option value="">All Severities</option><option value="critical">Critical</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="info">Info</option>
+          </select>
+          <select id="filter-type" onchange="loadEvents()" style="background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:6px 10px;border-radius:4px;font-family:'Rajdhani',sans-serif;font-size:13px;outline:none">
+            <option value="">All Types</option><option value="firewall">Firewall</option><option value="ids">IDS</option><option value="auth">Auth</option><option value="syslog">Syslog</option>
+          </select>
+          <button class="btn btn-secondary" onclick="loadEvents()" style="padding:6px 14px">Refresh</button>
+        </div>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="event-table">
+          <thead><tr><th>Timestamp</th><th>Severity</th><th>Type</th><th>Source IP</th><th>Dst Port</th><th>Message</th><th>Tags</th></tr></thead>
+          <tbody id="events-tbody"><tr><td colspan="7" style="text-align:center;color:var(--text3);padding:24px">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI ANALYSIS -->
+  <div class="panel" id="panel-analysis">
+    <div class="analysis-toolbar">
+      <button class="btn btn-primary"   onclick="runAnalysis('threats')">⚡ Threat Narratives</button>
+      <button class="btn btn-secondary" onclick="runAnalysis('summary')">📋 Shift Summary</button>
+      <button class="btn btn-secondary" onclick="runAnalysis('config')">🛡 Config Suggestions</button>
+      <div style="display:flex;gap:8px;margin-left:auto">
+        <input class="ip-input" id="ip-input" type="text" placeholder="e.g. 185.220.101.1">
+        <button class="btn btn-danger" onclick="runAnalysis('ip')">Investigate IP</button>
+      </div>
+    </div>
+    <div class="error-box" id="analysis-error"></div>
+    <div class="analysis-output">
+      <div class="analysis-placeholder" id="analysis-placeholder">
+        <div class="icon">⬡</div>
+        <div style="font-size:14px;letter-spacing:2px;text-transform:uppercase">AI Analyst Ready</div>
+        <div style="font-size:12px">Select an analysis type above to begin</div>
+      </div>
+      <div class="spinner-wrap" id="analysis-spinner">
+        <div class="spinner"></div>
+        <div class="spinner-text" id="spinner-text">ANALYZING...</div>
+      </div>
+      <div class="analysis-content" id="analysis-content"></div>
+    </div>
+  </div>
+
+  <!-- ALERTS -->
+  <div class="panel" id="panel-alerts">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text2)">Monitor Status:</div>
+        <div id="monitor-status-badge" style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--text3)">checking...</div>
+      </div>
+      <button class="btn btn-secondary" onclick="loadAlerts()" style="padding:6px 14px">Refresh</button>
+    </div>
+    <div class="card">
+      <div class="card-title">Alert Log</div>
+      <div id="alerts-list">
+        <div style="text-align:center;color:var(--text3);padding:40px;font-size:13px">Loading alerts...</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ── Markdown ──────────────────────────────────────────────────────────────────
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function renderMarkdown(md) {
+  return md
+    .replace(/```(\w+)?\n([\s\S]*?)```/g,(_,l,c)=>`<pre><code>${escHtml(c.trim())}</code></pre>`)
+    .replace(/`([^`]+)`/g,(_,c)=>`<code>${escHtml(c)}</code>`)
+    .replace(/^# (.+)$/gm,'<h1>$1</h1>').replace(/^## (.+)$/gm,'<h2>$1</h2>').replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/^---$/gm,'<hr style="border:none;border-top:1px solid var(--border);margin:20px 0">')
+    .replace(/(\|.+\|\n)((?:\|[-: ]+\|\n))((?:\|.+\|\n?)*)/g,(_,head,sep,body)=>{
+      const ths=head.trim().split('|').filter(c=>c.trim()).map(c=>`<th>${c.trim()}</th>`).join('');
+      const rows=body.trim().split('\n').map(row=>`<tr>${row.split('|').filter(c=>c.trim()).map(c=>`<td>${c.trim()}</td>`).join('')}</tr>`).join('');
+      return `<table><thead><tr>${ths}</tr></thead><tbody>${rows}</tbody></table>`;
+    })
+    .replace(/^[\-\*] (.+)$/gm,'<li>$1</li>').replace(/(<li>.*<\/li>\n?)+/g,m=>`<ul>${m}</ul>`)
+    .replace(/^\d+\. (.+)$/gm,'<li>$1</li>')
+    .split('\n\n').map(b=>b.match(/^<[hup]/)||b.trim()===''?b:`<p>${b.replace(/\n/g,' ')}</p>`).join('\n');
+}
+
+// ── Clock ─────────────────────────────────────────────────────────────────────
+function updateClock() {
+  const n=new Date(),p=x=>String(x).padStart(2,'0');
+  document.getElementById('clock').textContent=`${p(n.getUTCHours())}:${p(n.getUTCMinutes())}:${p(n.getUTCSeconds())} UTC`;
+}
+setInterval(updateClock,1000); updateClock();
+
+// ── Navigation ────────────────────────────────────────────────────────────────
+function showPanel(name, btn) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (name==='events') loadEvents();
+  if (name==='alerts') loadAlerts();
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function badge(sev) { return `<span class="badge badge-${sev}">${sev}</span>`; }
+function tagHtml(t) {
+  let c='tag-default';
+  if(t.includes('threat_intel'))c='tag-threat';
+  else if(t.includes('ids'))c='tag-ids';
+  else if(t.includes('scan')||t.includes('port'))c='tag-scan';
+  return `<span class="tag ${c}">${t}</span>`;
+}
+
+// ── Dashboard ─────────────────────────────────────────────────────────────────
+async function loadDashboard() {
+  try {
+    const [aggRes,evRes] = await Promise.all([fetch('/api/es/dashboard'),fetch('/api/es/events?severity=high')]);
+    const data=await aggRes.json(), evData=await evRes.json();
+    const aggs=data.aggregations||data;
+    const sevMap =Object.fromEntries((aggs.by_severity?.buckets||[]).map(b=>[b.key,b.doc_count]));
+    const tagMap =Object.fromEntries((aggs.by_tag?.buckets||[]).map(b=>[b.key,b.doc_count]));
+    const typeMap=Object.fromEntries((aggs.by_type?.buckets||[]).map(b=>[b.key,b.doc_count]));
+    const total=Object.values(sevMap).reduce((a,b)=>a+b,0);
+
+    document.getElementById('stat-total').textContent    = total;
+    document.getElementById('stat-critical').textContent = sevMap.critical||0;
+    document.getElementById('stat-high').textContent     = sevMap.high||0;
+    document.getElementById('stat-medium').textContent   = sevMap.medium||0;
+    document.getElementById('stat-threats').textContent  = tagMap.threat_intel_match||0;
+
+    const events=(evData.hits?.hits||[]).map(h=>h._source).slice(0,15);
+    document.getElementById('recent-events-tbody').innerHTML = events.length===0
+      ? '<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:24px">No high/critical events</td></tr>'
+      : events.map(e=>`<tr>
+          <td>${e.timestamp?.slice(0,19).replace('T',' ')}</td>
+          <td>${badge(e.severity)}</td>
+          <td style="color:var(--text2);text-transform:uppercase;font-size:11px;letter-spacing:1px">${e.source_type||'—'}</td>
+          <td style="color:${e.tags?.includes('threat_intel_match')?'var(--red)':'var(--text2)'}">${e.src_ip||'—'}</td>
+          <td class="message">${e.message||'—'}</td>
+        </tr>`).join('');
+
+    const ips=aggs.top_ips?.ips?.buckets||[], maxC=ips[0]?.doc_count||1;
+    document.getElementById('top-ips-list').innerHTML = ips.length===0
+      ? '<li style="color:var(--text3);font-size:13px;padding:12px 0">No threat IPs detected</li>'
+      : ips.map(ip=>`<li class="ip-item">
+          <span class="ip-addr">${ip.key}</span>
+          <div class="ip-bar-wrap"><div class="ip-bar" style="width:${Math.round(ip.doc_count/maxC*100)}%"></div></div>
+          <span class="ip-count">${ip.doc_count} events</span>
+          <button class="btn btn-danger" style="padding:3px 10px;font-size:11px" onclick="investigateIP('${ip.key}')">Investigate</button>
+        </li>`).join('');
+
+    const colors={firewall:'var(--cyan)',ids:'var(--purple)',auth:'var(--yellow)',syslog:'var(--text2)'};
+    document.getElementById('type-breakdown').innerHTML=Object.entries(typeMap).map(([k,v])=>`
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="width:80px;font-size:12px;font-weight:700;text-transform:uppercase;color:${colors[k]||'var(--text2)'};letter-spacing:1px">${k}</span>
+        <div style="flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden">
+          <div style="width:${Math.round(v/total*100)}%;height:100%;background:${colors[k]||'var(--text2)'};border-radius:3px"></div>
+        </div>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--text2);width:40px;text-align:right">${v}</span>
+      </div>`).join('');
+
+    const tc={threat_intel_match:'var(--red)',ids_alert:'var(--purple)',port_scan:'var(--yellow)',login_failure:'var(--yellow)',lateral_movement:'var(--red)',large_transfer:'var(--cyan)',privilege_escalation:'var(--purple)'};
+    document.getElementById('tags-breakdown').innerHTML=Object.entries(tagMap).filter(([k])=>k!=='unparsed').map(([k,v])=>`
+      <div style="display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:6px 10px">
+        <span style="font-size:12px;color:${tc[k]||'var(--text2)'}">${k}</span>
+        <span style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--text3)">${v}</span>
+      </div>`).join('');
+  } catch(e) { console.error('Dashboard error:',e); }
+}
+
+// ── Events ────────────────────────────────────────────────────────────────────
+async function loadEvents() {
+  const sev=document.getElementById('filter-severity').value;
+  const typ=document.getElementById('filter-type').value;
+  const tbody=document.getElementById('events-tbody');
+  tbody.innerHTML='<tr><td colspan="7" style="text-align:center;color:var(--text3);padding:24px">Loading...</td></tr>';
+  try {
+    let url='/api/es/events?';
+    if(sev) url+=`severity=${sev}&`;
+    if(typ) url+=`type=${typ}`;
+    const data=await (await fetch(url)).json();
+    const events=(data.hits?.hits||[]).map(h=>h._source);
+    tbody.innerHTML=events.length===0
+      ? '<tr><td colspan="7" style="text-align:center;color:var(--text3);padding:24px">No events match filters</td></tr>'
+      : events.map(e=>`<tr>
+          <td>${e.timestamp?.slice(0,19).replace('T',' ')}</td>
+          <td>${badge(e.severity)}</td>
+          <td style="color:var(--text2);text-transform:uppercase;font-size:11px;letter-spacing:1px">${e.source_type||'—'}</td>
+          <td style="color:${e.tags?.includes('threat_intel_match')?'var(--red)':'var(--text2)'}">${e.src_ip||'—'}</td>
+          <td style="color:var(--text2)">${e.dst_port||'—'}</td>
+          <td class="message">${e.message||'—'}</td>
+          <td>${(e.tags||[]).map(tagHtml).join('')}</td>
+        </tr>`).join('');
+  } catch(e) { tbody.innerHTML=`<tr><td colspan="7" style="color:var(--red);padding:24px">Error: ${e.message}</td></tr>`; }
+}
+
+// ── AI Analysis ───────────────────────────────────────────────────────────────
+function investigateIP(ip) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-analysis').classList.add('active');
+  document.querySelectorAll('.nav-btn')[2].classList.add('active');
+  document.getElementById('ip-input').value=ip;
+  runAnalysis('ip');
+}
+
+async function runAnalysis(type) {
+  const ph=document.getElementById('analysis-placeholder');
+  const sp=document.getElementById('analysis-spinner');
+  const co=document.getElementById('analysis-content');
+  const er=document.getElementById('analysis-error');
+  const labels={threats:'ANALYZING THREAT PATTERNS...',summary:'GENERATING SHIFT SUMMARY...',config:'COMPUTING CONFIG SUGGESTIONS...',ip:'INVESTIGATING IP ADDRESS...'};
+  ph.style.display='none'; sp.style.display='flex'; co.style.display='none'; er.style.display='none';
+  document.getElementById('spinner-text').textContent=labels[type]||'ANALYZING...';
+  // Update active button state
+  document.querySelectorAll('.analysis-toolbar .btn').forEach(b=>b.classList.remove('btn-primary','btn-secondary','btn-danger'));
+  const typeMap={threats:0,summary:1,config:2};
+  document.querySelectorAll('.analysis-toolbar .btn').forEach((b,i)=>{
+    if(type==='ip') b.classList.add(i===3?'btn-danger':'btn-secondary');
+    else b.classList.add(i===typeMap[type]?'btn-primary':'btn-secondary');
+  });
+  document.querySelectorAll('.analysis-toolbar .btn').forEach(b=>b.disabled=true);
+  try {
+    let url=`/api/analyze?type=${type}`;
+    if(type==='ip'){
+      const ip=document.getElementById('ip-input').value.trim();
+      if(!ip) throw new Error('Please enter an IP address.');
+      url+=`&ip=${encodeURIComponent(ip)}`;
+    }
+    const res=await fetch(url);
+    if(!res.ok){const err=await res.json().catch(()=>({})); throw new Error(err.error||`Server returned ${res.status}`);}
+    const data=await res.json();
+    sp.style.display='none'; co.style.display='block';
+    co.innerHTML=renderMarkdown(data.result||'No response received.');
+  } catch(e) {
+    sp.style.display='none'; er.style.display='block'; er.textContent='⚠ '+e.message; ph.style.display='flex';
+  }
+  document.querySelectorAll('.analysis-toolbar .btn').forEach(b=>b.disabled=false);
+}
+
+// ── Alerts ────────────────────────────────────────────────────────────────────
+const SEV_COLORS={critical:'var(--critical)',high:'var(--red)',medium:'var(--yellow)',low:'var(--cyan)'};
+
+async function loadAlerts() {
+  try {
+    const [aRes,sRes]=await Promise.all([fetch('/api/alerts'),fetch('/api/monitor/status')]);
+    const alertData=await aRes.json(), statusData=await sRes.json();
+    const alerts=alertData.alerts||[];
+
+    const statusEl=document.getElementById('monitor-status-badge');
+    if(statusData.last_seen){
+      statusEl.innerHTML=`<span style="color:var(--green)">● ACTIVE</span> &nbsp;last event: ${statusData.last_seen.slice(0,19).replace('T',' ')} UTC`;
+    } else {
+      statusEl.innerHTML=`<span style="color:var(--text3)">○ NOT STARTED</span> — run <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;font-size:11px">python monitor\\daemon.py</code>`;
+    }
+
+    const unacked=alerts.filter(a=>!a.acknowledged).length;
+    const nb=document.getElementById('alert-badge');
+    nb.style.display=unacked>0?'inline':'none';
+    if(unacked>0) nb.textContent=unacked;
+
+    const list=document.getElementById('alerts-list');
+    if(alerts.length===0){
+      list.innerHTML=`<div style="text-align:center;padding:60px;color:var(--text3)">
+        <div style="font-size:40px;margin-bottom:12px;opacity:0.3">✓</div>
+        <div style="font-size:14px;letter-spacing:2px;text-transform:uppercase">No alerts fired yet</div>
+        <div style="font-size:12px;margin-top:8px">Start the monitor daemon to begin watching for threats</div>
+      </div>`;
+      return;
+    }
+
+    list.innerHTML=alerts.map(a=>{
+      const color=SEV_COLORS[a.severity]||'var(--text2)', s=a.sample_event||{};
+      const ts=a.timestamp?.slice(0,19).replace('T',' ');
+      return `<div style="border:1px solid var(--border);border-left:3px solid ${color};border-radius:6px;padding:16px;margin-bottom:10px;background:var(--bg3);${a.acknowledged?'opacity:0.5':''}">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+          ${badge(a.severity)}
+          <span style="font-weight:700;color:var(--text);font-size:14px">${a.description}</span>
+          <span style="margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--text3)">${ts} UTC</span>
+          ${a.acknowledged
+            ?`<span style="font-size:11px;color:var(--text3);letter-spacing:1px">ACKNOWLEDGED</span>`
+            :`<button class="btn btn-secondary" style="padding:3px 10px;font-size:11px" onclick="acknowledgeAlert('${a.alert_id}')">Ack</button>`}
+        </div>
+        <div style="display:flex;gap:20px;font-size:12px;font-family:'Share Tech Mono',monospace;color:var(--text2);flex-wrap:wrap">
+          <span>Rule: <span style="color:var(--cyan)">${a.rule}</span></span>
+          <span>Events: <span style="color:var(--yellow)">${a.event_count}</span></span>
+          ${s.src_ip?`<span>Source: <span style="color:var(--red)">${s.src_ip}</span></span>`:''}
+          ${s.dst_port?`<span>Port: ${s.dst_port}</span>`:''}
+        </div>
+        ${s.message?`<div style="margin-top:8px;font-size:13px;color:var(--text2);border-top:1px solid var(--border);padding-top:8px">${s.message}</div>`:''}
+      </div>`;
+    }).join('');
+  } catch(e) {
+    document.getElementById('alerts-list').innerHTML=`<div style="color:var(--red);padding:24px">Error: ${e.message}</div>`;
+  }
+}
+
+async function acknowledgeAlert(id) {
+  try { await fetch(`/api/alerts/acknowledge/${id}`,{method:'POST'}); } catch(e){}
+  loadAlerts();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+loadDashboard();
+loadAlerts();
+setInterval(loadDashboard, 30000);
+setInterval(loadAlerts,    30000);
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SentinelaEvent",
+  "description": "Normalized event schema. Every log source maps to this structure before storage.",
+  "type": "object",
+  "required": ["event_id", "timestamp", "source_type", "severity", "category", "raw"],
+  "properties": {
+
+    "event_id": {
+      "type": "string",
+      "description": "UUID generated at ingestion time"
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp of when the event occurred"
+    },
+
+    "ingested_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp of when Sentinela ingested this event"
+    },
+
+    "source_type": {
+      "type": "string",
+      "enum": ["syslog", "firewall", "ids", "endpoint", "netflow", "auth", "dns", "web"],
+      "description": "What kind of system produced this log"
+    },
+
+    "source_host": {
+      "type": "string",
+      "description": "Hostname or IP of the device that generated the log"
+    },
+
+    "severity": {
+      "type": "string",
+      "enum": ["info", "low", "medium", "high", "critical"],
+      "description": "Normalized severity level"
+    },
+
+    "category": {
+      "type": "string",
+      "enum": [
+        "authentication",
+        "network_traffic",
+        "firewall",
+        "intrusion_detection",
+        "system",
+        "dns",
+        "process",
+        "file",
+        "web"
+      ],
+      "description": "Broad category of the event"
+    },
+
+    "action": {
+      "type": "string",
+      "description": "What happened: allowed, denied, login_success, login_failure, connection, scan, etc."
+    },
+
+    "src_ip": {
+      "type": ["string", "null"],
+      "description": "Source IP address"
+    },
+
+    "src_port": {
+      "type": ["integer", "null"],
+      "description": "Source port"
+    },
+
+    "dst_ip": {
+      "type": ["string", "null"],
+      "description": "Destination IP address"
+    },
+
+    "dst_port": {
+      "type": ["integer", "null"],
+      "description": "Destination port"
+    },
+
+    "protocol": {
+      "type": ["string", "null"],
+      "enum": ["tcp", "udp", "icmp", "dns", "http", "https", null],
+      "description": "Network protocol"
+    },
+
+    "user": {
+      "type": ["string", "null"],
+      "description": "Username involved in the event, if applicable"
+    },
+
+    "process": {
+      "type": ["string", "null"],
+      "description": "Process name involved, if applicable"
+    },
+
+    "message": {
+      "type": "string",
+      "description": "Human-readable summary of the event (normalized, not raw)"
+    },
+
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Additional labels: threat_intel_match, lateral_movement, port_scan, etc."
+    },
+
+    "threat_intel": {
+      "type": "object",
+      "description": "Threat intelligence enrichment if available",
+      "properties": {
+        "is_known_bad": { "type": "boolean" },
+        "feed": { "type": "string" },
+        "indicator": { "type": "string" }
+      }
+    },
+
+    "raw": {
+      "type": "string",
+      "description": "The original unmodified log line, always preserved"
+    }
+  }
+}
