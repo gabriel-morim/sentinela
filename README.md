@@ -5,6 +5,7 @@ Sentinela is a full-stack security monitoring platform that combines real-time l
 
 ![Dashboard](https://img.shields.io/badge/status-active-green) ![Python](https://img.shields.io/badge/python-3.11+-blue) ![Elasticsearch](https://img.shields.io/badge/elasticsearch-8.x-yellow) ![Claude](https://img.shields.io/badge/AI-Claude%20API-orange)
 
+![Sentinela Dashboard](assets/screenshot.png)
 ---
 
 ## What it does
