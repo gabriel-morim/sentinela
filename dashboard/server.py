@@ -129,6 +129,44 @@ def es_events():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/alerts')
+def get_alerts():
+    """Return recent alerts from the alert log file written by the monitor daemon."""
+    alerts_file = os.path.normpath(
+        os.path.join(os.path.dirname(__file__), '..', 'monitor', 'alerts.jsonl')
+    )
+    if not os.path.exists(alerts_file):
+        return jsonify({'alerts': [], 'total': 0})
+    try:
+        alerts = []
+        with open(alerts_file) as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    alerts.append(json.loads(line))
+        alerts.reverse()  # most recent first
+        return jsonify({'alerts': alerts[:50], 'total': len(alerts)})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/monitor/status')
+def monitor_status():
+    """Return monitor state (last seen timestamp, rule cooldowns)."""
+    state_file = os.path.normpath(
+        os.path.join(os.path.dirname(__file__), '..', 'monitor', '.monitor_state.json')
+    )
+    if not os.path.exists(state_file):
+        return jsonify({'running': False})
+    try:
+        with open(state_file) as f:
+            state = json.load(f)
+        state['running'] = True
+        return jsonify(state)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
     print(f"\n  Sentinela dashboard running at http://localhost:{port}")
