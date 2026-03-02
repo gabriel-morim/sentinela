@@ -320,37 +320,158 @@ def send_webhook(alert: dict):
 
 
 def send_email(alert: dict):
-    """Send alert via email."""
-    sev = alert["severity"].upper()
-    subject = f"[SENTINELA {sev}] {alert['description']}"
-    body = f"""SENTINELA SECURITY ALERT
+    """
+    Send a styled HTML alert email.
+
+    WHY HTML EMAIL:
+        A plain text email gets the information across but looks like
+        a script output. An HTML email with color-coded severity looks
+        like a product. For an IT manager receiving this in their inbox
+        alongside vendor emails, presentation matters — it signals that
+        Sentinela is a serious tool, not a hobby script.
+
+        We send both HTML and plain text versions (multipart/alternative)
+        so it renders correctly in all email clients, including ones that
+        don't support HTML like some enterprise mail systems.
+    """
+    from email.mime.multipart import MIMEMultipart
+
+    if not all([EMAIL_TO, SMTP_HOST, SMTP_USER, SMTP_PASS]):
+        print(f"{YELLOW}[WARN] Email not configured — skipping{RESET}")
+        return
+
+    sev     = alert["severity"].upper()
+    s       = alert["sample_event"] or {}
+    ts      = alert["timestamp"].replace("T", " ").replace("Z", " UTC")
+    rule    = alert["rule"]
+    desc    = alert["description"]
+    count   = alert["event_count"]
+    src_ip  = s.get("src_ip", "—")
+    dst_port= s.get("dst_port", "—")
+    message = s.get("message", "—")
+    tags    = ", ".join(s.get("tags", []))
+
+    sev_colors = {
+        "CRITICAL": "#ff4444",
+        "HIGH":     "#f85149",
+        "MEDIUM":   "#e3b341",
+        "LOW":      "#58c8e3",
+    }
+    color = sev_colors.get(sev, "#58c8e3")
+
+    subject = f"[SENTINELA {sev}] {desc}"
+
+    # ── HTML version ──────────────────────────────────────────────────────────
+    html = f"""<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#090c10;font-family:'Segoe UI',Arial,sans-serif">
+  <div style="max-width:600px;margin:0 auto;padding:24px">
+
+    <!-- Header -->
+    <div style="background:#0d1117;border:1px solid #21262d;border-top:3px solid {color};border-radius:8px;padding:24px;margin-bottom:16px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+        <span style="font-family:monospace;font-size:20px;color:{color};letter-spacing:4px;font-weight:700">SENTINELA</span>
+      </div>
+      <div style="font-size:11px;color:#484f58;letter-spacing:2px;text-transform:uppercase">Security Operations</div>
+    </div>
+
+    <!-- Alert card -->
+    <div style="background:#0d1117;border:1px solid #21262d;border-left:4px solid {color};border-radius:8px;padding:24px;margin-bottom:16px">
+      <div style="margin-bottom:16px">
+        <span style="background:{color}22;color:{color};border:1px solid {color}44;border-radius:3px;padding:3px 10px;font-size:11px;font-family:monospace;font-weight:700;letter-spacing:1px;text-transform:uppercase">{sev}</span>
+      </div>
+      <h2 style="color:#c9d1d9;font-size:18px;margin:0 0 8px">{desc}</h2>
+      <div style="font-family:monospace;font-size:12px;color:#484f58">{ts}</div>
+    </div>
+
+    <!-- Details -->
+    <div style="background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:24px;margin-bottom:16px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#484f58;margin-bottom:16px">Event Details</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <tr style="border-bottom:1px solid #21262d">
+          <td style="padding:8px 0;color:#484f58;font-family:monospace;width:120px">Rule</td>
+          <td style="padding:8px 0;color:#58c8e3;font-family:monospace">{rule}</td>
+        </tr>
+        <tr style="border-bottom:1px solid #21262d">
+          <td style="padding:8px 0;color:#484f58;font-family:monospace">Events</td>
+          <td style="padding:8px 0;color:#e3b341;font-family:monospace">{count} matching event(s)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #21262d">
+          <td style="padding:8px 0;color:#484f58;font-family:monospace">Source IP</td>
+          <td style="padding:8px 0;color:#f85149;font-family:monospace">{src_ip}</td>
+        </tr>
+        <tr style="border-bottom:1px solid #21262d">
+          <td style="padding:8px 0;color:#484f58;font-family:monospace">Port</td>
+          <td style="padding:8px 0;color:#c9d1d9;font-family:monospace">{dst_port}</td>
+        </tr>
+        <tr style="border-bottom:1px solid #21262d">
+          <td style="padding:8px 0;color:#484f58;font-family:monospace">Tags</td>
+          <td style="padding:8px 0;color:#bc8cff;font-family:monospace">{tags}</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 0;color:#484f58;font-family:monospace;vertical-align:top">Message</td>
+          <td style="padding:8px 0;color:#c9d1d9">{message}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Action button -->
+    <div style="text-align:center;margin-bottom:16px">
+      <a href="http://localhost:8080" style="background:#1c6679;color:#58c8e3;border:1px solid #58c8e3;border-radius:6px;padding:12px 28px;font-family:monospace;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none">
+        Open Dashboard →
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align:center;font-size:11px;color:#484f58;font-family:monospace;letter-spacing:1px">
+      SENTINELA SECURITY OPERATIONS · AUTOMATED ALERT
+    </div>
+
+  </div>
+</body>
+</html>"""
+
+    # ── Plain text fallback ───────────────────────────────────────────────────
+    plain = f"""SENTINELA SECURITY ALERT — {sev}
 {'='*50}
+{desc}
+{ts}
 
-Rule:      {alert['rule']}
-Severity:  {sev}
-Time:      {alert['timestamp']}
-Details:   {alert['description']}
-Events:    {alert['event_count']} matching event(s)
+Rule:     {rule}
+Events:   {count} matching event(s)
+Source:   {src_ip}:{dst_port}
+Tags:     {tags}
+Message:  {message}
 
-Sample Event:
-  Source IP:  {alert['sample_event'].get('src_ip', '—')}
-  Dest:       {alert['sample_event'].get('dst_ip', '—')}:{alert['sample_event'].get('dst_port', '—')}
-  Message:    {alert['sample_event'].get('message', '—')}
-  Tags:       {', '.join(alert['sample_event'].get('tags', []))}
+Open dashboard: http://localhost:8080
 
 --
 Sentinela Security Operations
 """
+
+    # ── Assemble and send ─────────────────────────────────────────────────────
     try:
-        msg = MIMEText(body)
+        msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
-        msg["From"]    = SMTP_USER
+        msg["From"]    = f"Sentinela Security <{SMTP_USER}>"
         msg["To"]      = EMAIL_TO
 
+        msg.attach(MIMEText(plain, "plain"))
+        msg.attach(MIMEText(html,  "html"))
+
         with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as smtp:
+            smtp.ehlo()
             smtp.starttls()
             smtp.login(SMTP_USER, SMTP_PASS)
             smtp.send_message(msg)
+
+        print(f"{GREEN}[EMAIL] Alert sent to {EMAIL_TO}{RESET}")
+
+    except smtplib.SMTPAuthenticationError:
+        print(f"{RED}[WARN] Email auth failed — check SMTP_USER and SMTP_PASS in .env{RESET}")
+        print(f"{YELLOW}        For Gmail, use an App Password, not your regular password{RESET}")
+        print(f"{YELLOW}        Generate one at: myaccount.google.com → Security → App Passwords{RESET}")
     except Exception as e:
         print(f"{YELLOW}[WARN] Email failed: {e}{RESET}")
 
@@ -451,11 +572,34 @@ def run_test():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Sentinela Continuous Monitor")
-    parser.add_argument("--interval", type=int, default=INTERVAL, help="Check interval in seconds")
-    parser.add_argument("--test",     action="store_true",         help="Fire a test alert and exit")
+    parser.add_argument("--interval",   type=int, default=INTERVAL, help="Check interval in seconds")
+    parser.add_argument("--test",        action="store_true",         help="Fire a test alert and exit")
+    parser.add_argument("--test-email",  action="store_true",         help="Send a test email and exit")
     args = parser.parse_args()
 
-    if args.test:
+    if args.test_email:
+        print(f"\n{YELLOW}Sending test email to {EMAIL_TO}...{RESET}\n")
+        test_alert = {
+            "alert_id":    "test_email_001",
+            "timestamp":   datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "rule":        "test",
+            "description": "Test alert — email delivery working",
+            "severity":    "medium",
+            "event_count": 1,
+            "sample_event": {
+                "timestamp":   datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "source_type": "test",
+                "src_ip":      "1.2.3.4",
+                "dst_ip":      "192.168.1.1",
+                "dst_port":    "22",
+                "message":     "Test alert from Sentinela monitor",
+                "tags":        ["test"],
+            }
+        }
+        send_email(test_alert)
+        print(f"{GREEN}Done. Check your inbox at {EMAIL_TO}{RESET}\n")
+        sys.exit(0)
+    elif args.test:
         run_test()
     else:
         run_daemon(args.interval)
